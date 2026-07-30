@@ -60,13 +60,43 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 68px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     max-width: 900px;
+  }
+  .brand-wrap{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
   }
   .brand{
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-weight: 600;
+    white-space: nowrap;
+  }
+  .brand-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .brand-contact a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted-fg);
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+  }
+  .brand-contact a:hover{ color: var(--accent); }
+  .brand-contact svg{
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
   }
   .nav-cta{
     font-family: 'IBM Plex Mono', monospace;
@@ -290,6 +320,27 @@
   }
   .contact .cta-row{ margin-top: 30px; }
 
+  .contact-info{
+    margin-top: 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    color: var(--muted-fg);
+  }
+  .contact-info a{
+    color: var(--muted-fg);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s ease-out, border-color 0.2s ease-out;
+  }
+  .contact-info a:hover{
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .contact-info .divider{
+    margin: 0 10px;
+    color: var(--border);
+  }
+
   footer{
     border-top: 1px solid var(--border);
     padding: 32px 0;
@@ -306,6 +357,8 @@
   @media (max-width: 640px){
     section{ padding: 56px 0; }
     .hero{ padding: 64px 0 56px; }
+    nav .wrap{ flex-wrap: wrap; gap: 10px; padding-bottom: 14px; }
+    .brand-wrap{ gap: 10px; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -330,7 +383,19 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand">Ryrie John</div>
+    <div class="brand-wrap">
+      <div class="brand">Ryrie John</div>
+      <div class="brand-contact">
+        <a href="mailto:rjapilo10@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6 12 13 2 6"></path></svg>
+          <span class="label-text">rjapilo10@gmail.com</span>
+        </a>
+        <a href="https://wa.me/639762318117" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span class="label-text">+63 976 231 8117</span>
+        </a>
+      </div>
+    </div>
     <a class="nav-cta" href="https://cal.com/ryrie-apilo-u5xny7/30min" target="_blank" rel="noopener">Book a call</a>
   </div>
 </nav>
@@ -341,7 +406,6 @@
   <p class="sub">Stop chasing leads. I handle the outreach, the follow-up, and the qualifying. You just show up and close.</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="https://cal.com/ryrie-apilo-u5xny7/30min" target="_blank" rel="noopener">Book a call</a>
-    <a class="btn btn-ghost" href="mailto:rjapilo10@gmail.com">Email me</a>
   </div>
 </header>
 
@@ -443,7 +507,11 @@
     <h2>Your leads are already out there. Stop letting them go cold, stop wasting time on tire kickers. Let's go get the ones worth having.</h2>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://cal.com/ryrie-apilo-u5xny7/30min" target="_blank" rel="noopener">Book a call</a>
-      <a class="btn btn-ghost" href="mailto:rjapilo10@gmail.com">Email me</a>
+    </div>
+    <div class="contact-info">
+      <a href="mailto:rjapilo10@gmail.com">rjapilo10@gmail.com</a>
+      <span class="divider">&middot;</span>
+      <a href="https://wa.me/639762318117" target="_blank" rel="noopener">WhatsApp: +63 976 231 8117</a>
     </div>
   </div>
 </section>
