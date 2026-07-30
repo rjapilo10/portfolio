@@ -243,11 +243,7 @@
     gap: 20px;
     padding: 22px 0;
     border-bottom: 1px solid var(--border);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  .phase.visible{ opacity: 1; transform: translateY(0); }
   .phase:last-child{ border-bottom: none; }
   .phase .n{
     font-family: 'Playfair Display', serif;
@@ -362,7 +358,6 @@
   }
 
   @media (prefers-reduced-motion: reduce){
-    .phase{ opacity: 1; transform: none; transition: none; }
   }
 
   .grain{
@@ -520,19 +515,5 @@
   <div class="wrap"><p>RYRIE JOHN — COLD OUTREACH & APPOINTMENT SETTING</p></div>
 </footer>
 
-<script>
-  const phases = document.querySelectorAll('.phase');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if(entry.isIntersecting){
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-  phases.forEach(p => observer.observe(p));
-
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    phases.forEach(p => p.classList.add('visible'));
-  }
-</
+</body>
+</html>
